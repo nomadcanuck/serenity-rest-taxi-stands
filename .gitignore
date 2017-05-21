@@ -1,6 +1,15 @@
-target/
 tfl.properties
-taxi-rank.iml
+*.iml
 *.iws
 *.ipr
+.idea/
+build/
+target/
+/out/
+*.class
+*.log
+.DS_Store
+
+# JIRA plugin
+atlassian-ide-plugin.xml
 
