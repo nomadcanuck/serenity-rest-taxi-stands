@@ -1,10 +1,10 @@
 package net.serenitybdd.demos.taxiranks.glue;
 
-import com.jayway.restassured.path.json.JsonPath;
 import cucumber.api.Transform;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.restassured.path.json.JsonPath;
 import net.serenitybdd.demos.apis.TFLPlaces;
 import net.serenitybdd.demos.model.locations.Place;
 import net.serenitybdd.demos.model.locations.TaxiStand;
@@ -33,7 +33,7 @@ public class FindingTaxiStandSteps {
     // Specifying parameters
     @When("^s?he looks for the closest taxi rank within (\\d+) meters$")
     public void lookForTheClosestTaxiRankWithin(int maximumDistance) throws Throwable {
-        with().parameters(
+        with().params(
                 "lat", currentLocation.latitude,
                 "lon", currentLocation.longitude,
                 "radius", maximumDistance)
