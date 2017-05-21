@@ -16,6 +16,7 @@ public class APICredentials {
     private final String DEFAULT_CREDENTIALS_FILE = "tfl.properties";
     private static final String NOT_REGISTERED_MESSAGE = "To use this API register at https://api.tfl.gov.uk and create a file called tfl.properties in the root directory of your project, containing the properties tfl.app_id and tfl.app_key";
 
+    private final String baseUrl;
     private final String appId;
     private final String appKey;
 
@@ -27,6 +28,7 @@ public class APICredentials {
         try {
             Properties credentialsProperties = new Properties();
             credentialsProperties.load(new FileInputStream(DEFAULT_CREDENTIALS_FILE));
+            baseUrl = credentialsProperties.getProperty("base_url");
             appId = credentialsProperties.getProperty("app_id");
             appKey = credentialsProperties.getProperty("app_key");
         } catch (IOException e) {
@@ -36,6 +38,10 @@ public class APICredentials {
         if (isBlank(appKey) || isBlank(appId)) {
             throw new NotRegisteredException(NOT_REGISTERED_MESSAGE);
         }
+    }
+
+    public String getBaseUrl() {
+        return baseUrl;
     }
 
     public String getAppKey() {

@@ -10,7 +10,7 @@ import static java.lang.String.format;
 
 public class TFLPlaces {
 
-    private static final String BASE_URL = "https://api.tfl.gov.uk";
+    private static final String BASE_URL = APICredentials.fromLocalEnvironment().getBaseUrl();
 
     private static final String APP_ID = APICredentials.fromLocalEnvironment().getAppId();
     private static final String APP_KEY = APICredentials.fromLocalEnvironment().getAppKey();
