@@ -1,9 +1,9 @@
 package net.serenitybdd.demos.taxiranks.glue;
 
 import com.google.common.collect.ImmutableMap;
-import com.jayway.restassured.http.ContentType;
-import com.jayway.restassured.path.json.JsonPath;
-import com.jayway.restassured.path.xml.XmlPath;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.path.xml.XmlPath;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.demos.apis.TFLPlaces;
@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-import static com.jayway.restassured.http.ContentType.JSON;
-import static com.jayway.restassured.http.ContentType.XML;
+import static io.restassured.http.ContentType.JSON;
+import static io.restassured.http.ContentType.XML;
 import static net.serenitybdd.rest.SerenityRest.given;
 import static net.serenitybdd.rest.SerenityRest.then;
 import static org.assertj.core.api.Assertions.assertThat;
