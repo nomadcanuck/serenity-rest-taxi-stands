@@ -82,7 +82,7 @@ public class FindingTaxiStandSteps {
 
         List<Map> places = JsonPath.from(jsonResponse).getList("places", Map.class);
 
-        taxiRanks.stream().forEach(
+        taxiRanks.forEach(
                 (Map<String, String> taxiRank) -> checkThatATaxiRankLike(taxiRank).existsIn(places)
         );
     }
